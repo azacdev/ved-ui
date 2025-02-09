@@ -18,12 +18,8 @@ export const siteConfig = {
       label: "Docs",
     },
     {
-      href: "/docs/components/expandable-card",
+      href: "/docs/components/input",
       label: "Components",
-    },
-    {
-      href: "/blog",
-      label: "Blog",
     },
   ],
   pricing: [

@@ -26,96 +26,12 @@ export const docsConfig: DocsConfig = {
         },
       ],
     },
-    // {
-    //   title: "Templates",
-    //   items: [
-    //     {
-    //       title: "Portfolio",
-    //       href: "/docs/templates/portfolio",
-    //     },
-    //   ],
-    // },
     {
       title: "Components",
       items: [
         {
-          title: "Expandable Card",
-          href: "/docs/components/expandable-card",
-        },
-        {
-          title: "Floating Action Panel",
-          href: "/docs/components/floating-action-panel",
-        },
-        {
-          title: "Hero Badge",
-          href: "/docs/components/hero-badge",
-        },
-        {
-          title: "Display Cards",
-          href: "/docs/components/display-cards",
-        },
-        {
-          title: "Popover",
-          href: "/docs/components/popover",
-          isNew: true,
-        },
-        {
-          title: "Tweet Card",
-          href: "/docs/components/tweet-card",
-          isNew: true,
-        },
-      ],
-    },
-    {
-      title: "Page Sections",
-      items: [
-        {
-          title: "Hero",
-          href: "/docs/components/hero",
-        },
-        {
-          title: "Open Source",
-          href: "/docs/components/open-source",
-        },
-        {
-          title: "Logo Carousel",
-          href: "/docs/components/logo-carousel",
-        },
-        {
-          title: "Pricing",
-          href: "/docs/sections/pricing",
-        },
-        {
-          title: "Timeline",
-          href: "/docs/components/timeline",
-          isNew: true,
-        },
-      ],
-    },
-    {
-      title: "Buttons",
-      items: [
-        {
-          title: "Action Button",
-          href: "/docs/components/action-button",
-        },
-        {
-          title: "Button Group",
-          href: "/docs/components/button-group",
-        },
-      ],
-    },
-
-    {
-      title: "Text Animations",
-      items: [
-        {
-          title: "Word Reveal",
-          href: "/docs/components/word-reveal",
-        },
-        {
-          title: "Number Flow",
-          href: "/docs/components/number-flow",
+          title: "Input",
+          href: "/docs/components/input",
         },
       ],
     },

@@ -1,11 +1,13 @@
 import Hero from "@/components/home/hero";
-import Header from "@/components/navbar/header";
+import Footer from "@/components/layout/footer";
+import Header from "@/components/layout/header";
 
 export default function Home() {
   return (
     <main>
       <Header />
-      <Hero/>
+      <Hero />
+      <Footer />
     </main>
-    )
+  );
 }

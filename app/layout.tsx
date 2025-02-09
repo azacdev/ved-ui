@@ -3,7 +3,8 @@ import type { Metadata, Viewport } from "next";
 import "@/styles/globals.css";
 import { ThemeProvider } from "@/provider/theme-provider";
 import { TailwindIndicator } from "@/components/tailwind-indicator";
-
+import Header from "@/components/layout/header";
+import Footer from "@/components/layout/footer";
 
 export const metadata: Metadata = {
   title: "Ved UI",
@@ -32,7 +33,7 @@ export default function RootLayout({
       <body
         className={`min-h-screen bg-background antialiased w-full mx-auto scroll-smooth`}
       >
-         <ThemeProvider
+        <ThemeProvider
           attribute="class"
           defaultTheme="light"
           enableSystem={true}
