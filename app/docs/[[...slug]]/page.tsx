@@ -1,15 +1,15 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
-
-import { source } from "@/lib/source";
-import { DynamicLink } from "@/components/dynamic-link";
-import { Mdx } from "@/components/mdx-components";
 import {
   DocsBody,
   DocsDescription,
   DocsPage,
   DocsTitle,
 } from "fumadocs-ui/page";
+
+import { source } from "@/lib/source";
+import { DynamicLink } from "@/components/dynamic-link";
+import { Mdx } from "@/components/mdx-components";
 
 interface DocPageParams {
   params: Promise<{

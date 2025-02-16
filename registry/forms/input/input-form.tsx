@@ -18,8 +18,8 @@ import { Input } from "@/components/ui/input";
 import { toast } from "sonner";
 
 const FormSchema = z.object({
-  username: z.string().min(2, {
-    message: "Username must be at least 2 characters.",
+  text: z.string().min(2, {
+    message: "text must be at least 2 characters.",
   }),
 });
 
@@ -27,12 +27,12 @@ export default function FormInput() {
   const form = useForm<z.infer<typeof FormSchema>>({
     resolver: zodResolver(FormSchema),
     defaultValues: {
-      username: "",
+      text: "",
     },
   });
 
   function onSubmit(data: z.infer<typeof FormSchema>) {
-    toast.success(`Username: ${data.username}`);
+    toast.success(data.text);
   }
 
   return (
@@ -40,16 +40,13 @@ export default function FormInput() {
       <form onSubmit={form.handleSubmit(onSubmit)} className="w-2/3 space-y-6">
         <FormField
           control={form.control}
-          name="username"
+          name="text"
           render={({ field }) => (
             <FormItem>
-              <FormLabel>Username</FormLabel>
+              <FormLabel>Text</FormLabel>
               <FormControl>
-                <Input placeholder="shadcn" {...field} />
+                <Input placeholder="wubba lubba dub dub" {...field} />
               </FormControl>
-              <FormDescription>
-                This is your public display name.
-              </FormDescription>
               <FormMessage />
             </FormItem>
           )}

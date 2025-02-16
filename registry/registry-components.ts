@@ -2,10 +2,15 @@ import type { Registry } from "@/registry/schema";
 
 export const components: Registry = [
   {
-    name: "form-input",
-    type: "registry:block",
+    name: "input-form",
+    type: "registry:forms",
     registryDependencies: ["input", "button", "form", "sonner"],
-    dependencies: ["zod", "react-hook-form", "@hookform/resolvers"],
-    files: ["blocks/input/form-input.tsx"],
+    files: ["forms/input/input-form.tsx"],
+  },
+  {
+    name: "select-form",
+    type: "registry:forms",
+    registryDependencies: ["select", "button", "form", "sonner"],
+    files: ["forms/select/select-form.tsx"],
   },
 ];

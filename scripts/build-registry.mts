@@ -12,8 +12,9 @@ const PUBLIC_FOLDER_BASE_PATH = "public/registry";
 const COMPONENT_FOLDER_PATH = "components";
 
 type File = z.infer<typeof registryItemFileSchema>;
+
 const FolderToComponentTypeMap = {
-  block: "registry:block",
+  forms: "registry:forms",
   component: "registry:component",
   hooks: "registry:hook",
   ui: "registry:ui",
