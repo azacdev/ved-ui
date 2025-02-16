@@ -5,19 +5,39 @@ import * as React from "react";
 
 export const Index: Record<string, any> = {
   default: {
-    "form-input": {
-      name: "form-input",
+    "input-form": {
+      name: "input-form",
       description: "",
-      type: "registry:block",
+      type: "registry:forms",
       registryDependencies: ["input", "button", "form", "sonner"],
       files: [
         {
-          path: "registry/blocks/input/form-input.tsx",
-          type: "registry:block",
+          path: "registry/forms/input/input-form.tsx",
+          type: "registry:forms",
           target: "",
         },
       ],
-      component: React.lazy(() => import("@/registry/blocks/input/form-input")),
+      component: React.lazy(() => import("@/registry/forms/input/input-form")),
+      source: "",
+      category: "",
+      subcategory: "",
+      chunks: [],
+    },
+    "select-form": {
+      name: "select-form",
+      description: "",
+      type: "registry:forms",
+      registryDependencies: ["select", "button", "form", "sonner"],
+      files: [
+        {
+          path: "registry/forms/select/select-form.tsx",
+          type: "registry:forms",
+          target: "",
+        },
+      ],
+      component: React.lazy(
+        () => import("@/registry/forms/select/select-form")
+      ),
       source: "",
       category: "",
       subcategory: "",
