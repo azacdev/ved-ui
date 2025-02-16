@@ -1,0 +1,22 @@
+{
+  "name": "form-input",
+  "type": "registry:block",
+  "registryDependencies": [
+    "input",
+    "button",
+    "form",
+    "sonner"
+  ],
+  "dependencies": [
+    "zod",
+    "react-hook-form",
+    "@hookform/resolvers"
+  ],
+  "files": [
+    {
+      "content": "\"use client\";\n\nimport { z } from \"zod\";\nimport { useForm } from \"react-hook-form\";\nimport { zodResolver } from \"@hookform/resolvers/zod\";\n\nimport { Button } from \"@/components/ui/button\";\nimport {\n  Form,\n  FormControl,\n  FormDescription,\n  FormField,\n  FormItem,\n  FormLabel,\n  FormMessage,\n} from \"@/components/ui/form\";\nimport { Input } from \"@/components/ui/input\";\nimport { toast } from \"sonner\";\n\nconst FormSchema = z.object({\n  username: z.string().min(2, {\n    message: \"Username must be at least 2 characters.\",\n  }),\n});\n\nexport function InputForm() {\n  const form = useForm<z.infer<typeof FormSchema>>({\n    resolver: zodResolver(FormSchema),\n    defaultValues: {\n      username: \"\",\n    },\n  });\n\n  function onSubmit(data: z.infer<typeof FormSchema>) {\n    toast.success(`Username: ${data.username}`);\n  }\n\n  return (\n    <Form {...form}>\n      <form onSubmit={form.handleSubmit(onSubmit)} className=\"w-2/3 space-y-6\">\n        <FormField\n          control={form.control}\n          name=\"username\"\n          render={({ field }) => (\n            <FormItem>\n              <FormLabel>Username</FormLabel>\n              <FormControl>\n                <Input placeholder=\"shadcn\" {...field} />\n              </FormControl>\n              <FormDescription>\n                This is your public display name.\n              </FormDescription>\n              <FormMessage />\n            </FormItem>\n          )}\n        />\n        <Button type=\"submit\">Submit</Button>\n      </form>\n    </Form>\n  );\n}\n",
+      "path": "blocks/input/form-input.tsx",
+      "target": "components/blocks/input/form-input.tsx"
+    }
+  ]
+}
