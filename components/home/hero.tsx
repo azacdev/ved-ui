@@ -23,7 +23,7 @@ function HeroPill() {
         onHoverStart={() => controls.start({ rotate: -10 })}
         onHoverEnd={() => controls.start({ rotate: 0 })}
       >
-        <span>New! VedUI Components</span>
+        <span>New! Ved UI Components</span>
         <Icons.chevronRight className="h-4 w-4" />
       </motion.div>
     </Link>

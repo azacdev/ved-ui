@@ -1,0 +1,81 @@
+---
+title: Input
+description: A group of checkboxes that allows multiple selections with support for validation and accessibility.
+preview: true
+links:
+  api: /docs/components/checkbox-group#api-reference
+---
+
+import { ComponentTabs } from "@/components/component-tabs.tsx";
+
+<ComponentTabs name="form-input">
+```tsx
+
+"use client";
+
+import { z } from "zod";
+import { useForm } from "react-hook-form";
+import { zodResolver } from "@hookform/resolvers/zod";
+
+import { Button } from "@/components/ui/button";
+import {
+  Form,
+  FormControl,
+  FormDescription,
+  FormField,
+  FormItem,
+  FormLabel,
+  FormMessage,
+} from "@/components/ui/form";
+import { Input } from "@/components/ui/input";
+import { toast } from "sonner";
+
+const FormSchema = z.object({
+username: z.string().min(2, {
+message: "Username must be at least 2 characters.",
+}),
+});
+
+export default function FormInput() {
+  const form = useForm<z.infer<typeof FormSchema>>({
+    resolver: zodResolver(FormSchema),
+    defaultValues: {
+      username: "",
+    },
+  });
+
+function onSubmit(data: z.infer<typeof FormSchema>) {
+toast.success(`Username: ${data.username}`);
+}
+
+return (
+
+<Form {...form}>
+  <form onSubmit={form.handleSubmit(onSubmit)} className="w-2/3 space-y-6">
+    <FormField
+      control={form.control}
+      name="username"
+      render={({ field }) => (
+        <FormItem>
+          <FormLabel>Username</FormLabel>
+          <FormControl>
+            <Input placeholder="shadcn" {...field} />
+          </FormControl>
+          <FormDescription>This is your public display name.</FormDescription>
+          <FormMessage />
+        </FormItem>
+      )}
+    />
+    <Button type="submit">Submit</Button>
+  </form>
+</Form>
+); }
+
+````
+</ComponentTabs>
+
+## Installation
+
+```package-install
+@diceui/checkbox-group
+````

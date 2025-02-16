@@ -1,9 +1,10 @@
 import { Metadata } from "next";
 import type { ReactNode } from "react";
 import { Inter } from "next/font/google";
+import { RootProvider } from "fumadocs-ui/provider";
 
 import "@/styles/global.css";
-import { RootProvider } from "fumadocs-ui/provider";
+import { Toaster } from "sonner";
 import Footer from "@/components/footer";
 
 export const metadata: Metadata = {
@@ -21,6 +22,7 @@ export default function Layout({ children }: { children: ReactNode }) {
       <body className="flex flex-col min-h-screen">
         <RootProvider>
           {children}
+          <Toaster />
           <Footer />
         </RootProvider>
       </body>
