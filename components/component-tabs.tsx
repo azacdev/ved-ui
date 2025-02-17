@@ -52,7 +52,7 @@ export function ComponentTabs({
     <Tabs items={["Preview", "Code"]} className="rounded-md">
       <Tab
         value="Preview"
-        className={cn("preview-block", {
+        className={cn("preview-block hover:cursor-pointer", {
           "focus-visible:outline-hidden focus-visible:ring-0":
             preventPreviewFocus,
         })}
