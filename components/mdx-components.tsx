@@ -15,6 +15,7 @@ import { DataAttributesTable } from "@/components/data-attributes-table";
 import { Kbd } from "@/components/kbd";
 import { KeyboardShortcutsTable } from "@/components/keyboard-shortcuts-table";
 import { Table, TableCell, TableHead, TableRow } from "@/components/ui/table";
+import BlurImage from "./blur-image";
 
 const { AutoTypeTable } = createTypeTable();
 
@@ -37,6 +38,42 @@ export function useMdxComponents(
     ...defaultComponents,
     ...components,
     ...headings,
+    Quote: (props: {
+      author: string;
+      authorSrc: string;
+      title: string;
+      company: string;
+      companySrc: string;
+      text: string;
+    }) => (
+      <div className="not-prose mt-4 flex flex-col items-center justify-center space-y-4 rounded-md border border-border bg-card p-10">
+        <div className="w-fit rounded-full bg-gradient-to-r from-blue-100 to-green-100 p-1.5 dark:from-blue-900 dark:to-green-900">
+          <BlurImage
+            className="h-20 w-20 rounded-full border-2 border-background"
+            src={props.authorSrc}
+            alt={props.author}
+            width={80}
+            height={80}
+          />
+        </div>
+        <p className="text-center text-lg text-muted-foreground [text-wrap:balance]">
+          &quot;{props.text}&quot;
+        </p>
+        <div className="flex items-center justify-center space-x-2">
+          <BlurImage
+            className="h-12 w-12 rounded-md border-2 border-background"
+            src={props.companySrc}
+            alt={props.company}
+            width={48}
+            height={48}
+          />
+          <div className="flex flex-col">
+            <p className="font-semibold text-foreground">{props.author}</p>
+            <p className="text-sm text-muted-foreground">{props.title}</p>
+          </div>
+        </div>
+      </div>
+    ),
     table: ({ className, ...props }) => (
       <Table className={cn(className)} mdx {...props} />
     ),
