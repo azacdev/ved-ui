@@ -1,6 +1,6 @@
 {
   "name": "input-form",
-  "type": "registry:component",
+  "type": "registry:ui",
   "registryDependencies": [
     "input",
     "button",
@@ -9,10 +9,10 @@
   ],
   "files": [
     {
-      "type": "registry:component",
+      "type": "registry:ui",
       "content": "\"use client\";\n\nimport { z } from \"zod\";\nimport { useForm } from \"react-hook-form\";\nimport { zodResolver } from \"@hookform/resolvers/zod\";\n\nimport { Button } from \"@/components/ui/button\";\nimport {\n  Form,\n  FormControl,\n  FormField,\n  FormItem,\n  FormLabel,\n  FormMessage,\n} from \"@/components/ui/form\";\nimport { Input } from \"@/components/ui/input\";\nimport { toast } from \"sonner\";\n\nconst FormSchema = z.object({\n  text: z.string().min(2, {\n    message: \"text must be at least 2 characters.\",\n  }),\n});\n\nexport default function FormInput() {\n  const form = useForm<z.infer<typeof FormSchema>>({\n    resolver: zodResolver(FormSchema),\n    defaultValues: {\n      text: \"\",\n    },\n  });\n\n  function onSubmit(data: z.infer<typeof FormSchema>) {\n    toast.success(data.text);\n  }\n\n  return (\n    <Form {...form}>\n      <form onSubmit={form.handleSubmit(onSubmit)} className=\"w-2/3 space-y-6\">\n        <FormField\n          control={form.control}\n          name=\"text\"\n          render={({ field }) => (\n            <FormItem>\n              <FormLabel>Text</FormLabel>\n              <FormControl>\n                <Input placeholder=\"wubba lubba dub dub\" {...field} />\n              </FormControl>\n              <FormMessage />\n            </FormItem>\n          )}\n        />\n        <Button type=\"submit\">Submit</Button>\n      </form>\n    </Form>\n  );\n}\n",
-      "path": "component/input/input-form.tsx",
-      "target": "components/component/input/input-form.tsx"
+      "path": "ui/input/input-form.tsx",
+      "target": "components/ui/input/input-form.tsx"
     }
   ]
 }
