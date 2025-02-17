@@ -3,14 +3,14 @@ import type { Registry } from "@/registry/schema";
 export const components: Registry = [
   {
     name: "input-form",
-    type: "registry:block",
+    type: "registry:component",
     registryDependencies: ["input", "button", "form", "sonner"],
-    files: ["block/input/input-form.tsx"],
+    files: ["component/input/input-form.tsx"],
   },
   {
     name: "select-form",
-    type: "registry:block",
+    type: "registry:component",
     registryDependencies: ["select", "button", "form", "sonner"],
-    files: ["block/select/select-form.tsx"],
+    files: ["component/select/select-form.tsx"],
   },
 ];
