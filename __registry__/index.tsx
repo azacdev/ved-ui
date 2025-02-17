@@ -8,16 +8,18 @@ export const Index: Record<string, any> = {
     "input-form": {
       name: "input-form",
       description: "",
-      type: "registry:block",
+      type: "registry:component",
       registryDependencies: ["input", "button", "form", "sonner"],
       files: [
         {
-          path: "registry/block/input/input-form.tsx",
-          type: "registry:block",
+          path: "registry/component/input/input-form.tsx",
+          type: "registry:component",
           target: "",
         },
       ],
-      component: React.lazy(() => import("@/registry/block/input/input-form")),
+      component: React.lazy(
+        () => import("@/registry/component/input/input-form")
+      ),
       source: "",
       category: "",
       subcategory: "",
@@ -26,17 +28,17 @@ export const Index: Record<string, any> = {
     "select-form": {
       name: "select-form",
       description: "",
-      type: "registry:block",
+      type: "registry:component",
       registryDependencies: ["select", "button", "form", "sonner"],
       files: [
         {
-          path: "registry/block/select/select-form.tsx",
-          type: "registry:block",
+          path: "registry/component/select/select-form.tsx",
+          type: "registry:component",
           target: "",
         },
       ],
       component: React.lazy(
-        () => import("@/registry/block/select/select-form")
+        () => import("@/registry/component/select/select-form")
       ),
       source: "",
       category: "",
