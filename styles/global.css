@@ -213,7 +213,7 @@
 
 @utility preview-block {
   & kbd {
-    @apply shadow-none! border-none!;
+    @apply shadow-none! border-none! hover:cursor-pointer;
   }
 }
 
