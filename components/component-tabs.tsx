@@ -68,7 +68,7 @@ export function ComponentTabs({
       </TabsList>
 
       <TabsContent value="preview">
-        <Card>
+        <Card className="shadow-none">
           <CardContent
             className={cn(
               "flex min-h-[400px] items-center justify-center p-10",

@@ -4,6 +4,7 @@ import { z } from "zod";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 
+import { toast } from "sonner";
 import { Button } from "@/components/ui/button";
 import {
   Form,
@@ -14,7 +15,6 @@ import {
   FormMessage,
 } from "@/components/ui/form";
 import { Input } from "@/components/ui/input";
-import { toast } from "sonner";
 
 const FormSchema = z.object({
   text: z.string().min(2, {
@@ -44,7 +44,7 @@ export default function FormInput() {
             <FormItem>
               <FormLabel>Text</FormLabel>
               <FormControl>
-                <Input placeholder="wubba lubba dub dub" {...field} />
+                <Input placeholder="Wubba Lubba Dub-Dub!" {...field} />
               </FormControl>
               <FormMessage />
             </FormItem>
