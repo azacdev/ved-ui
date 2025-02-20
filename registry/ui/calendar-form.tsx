@@ -90,7 +90,9 @@ export default function CalendarForm() {
             </FormItem>
           )}
         />
-        <Button type="submit">Submit</Button>
+        <Button type="submit" className="hover:cursor-pointer">
+          Submit
+        </Button>
       </form>
     </Form>
   );

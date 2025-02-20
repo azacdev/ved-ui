@@ -19,4 +19,10 @@ export const components: Registry = [
     registryDependencies: ["calendar", "button", "form", "sonner"],
     files: ["ui/calendar-form.tsx"],
   },
+  {
+    name: "tag-input-form",
+    type: "registry:ui",
+    registryDependencies: ["input", "button", "form", "sonner", "badge"],
+    files: ["ui/tag-input-form.tsx"],
+  },
 ];

@@ -59,5 +59,23 @@ export const Index: Record<string, any> = {
       subcategory: "",
       chunks: [],
     },
+    "tag-input-form": {
+      name: "input-form",
+      description: "",
+      type: "registry:ui",
+      registryDependencies: ["input", "button", "form", "sonner"],
+      files: [
+        {
+          path: "registry/ui/tag-input-form.tsx",
+          type: "registry:ui",
+          target: "",
+        },
+      ],
+      component: React.lazy(() => import("@/registry/ui/tag-input-form")),
+      source: "",
+      category: "",
+      subcategory: "",
+      chunks: [],
+    },
   },
 };
