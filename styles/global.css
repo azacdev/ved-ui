@@ -207,7 +207,7 @@
   }
 
   [data-rehype-pretty-code-figure] figure {
-    @apply rounded-none! my-4!;
+    @apply rounded-lg -mt-6!;
   }
 }
 
