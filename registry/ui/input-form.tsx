@@ -44,7 +44,7 @@ export default function FormInput() {
             <FormItem>
               <FormLabel>Text</FormLabel>
               <FormControl>
-                <Input placeholder="wubba lubba dub dub" {...field} />
+                <Input placeholder="Wubba Lubba Dub-Dub!" {...field} />
               </FormControl>
               <FormMessage />
             </FormItem>

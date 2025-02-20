@@ -12,12 +12,12 @@ export const Index: Record<string, any> = {
       registryDependencies: ["input", "button", "form", "sonner"],
       files: [
         {
-          path: "registry/ui/input/input-form.tsx",
+          path: "registry/ui/input-form.tsx",
           type: "registry:ui",
           target: "",
         },
       ],
-      component: React.lazy(() => import("@/registry/ui/input/input-form")),
+      component: React.lazy(() => import("@/registry/ui/input-form")),
       source: "",
       category: "",
       subcategory: "",
@@ -30,12 +30,30 @@ export const Index: Record<string, any> = {
       registryDependencies: ["select", "button", "form", "sonner"],
       files: [
         {
-          path: "registry/ui/select/select-form.tsx",
+          path: "registry/ui/select-form.tsx",
           type: "registry:ui",
           target: "",
         },
       ],
-      component: React.lazy(() => import("@/registry/ui/select/select-form")),
+      component: React.lazy(() => import("@/registry/ui/select-form")),
+      source: "",
+      category: "",
+      subcategory: "",
+      chunks: [],
+    },
+    "calendar-form": {
+      name: "calendar-form",
+      description: "",
+      type: "registry:ui",
+      registryDependencies: ["calendar", "button", "form", "sonner"],
+      files: [
+        {
+          path: "registry/ui/calendar-form.tsx",
+          type: "registry:ui",
+          target: "",
+        },
+      ],
+      component: React.lazy(() => import("@/registry/ui/calendar-form")),
       source: "",
       category: "",
       subcategory: "",
