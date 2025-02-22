@@ -77,5 +77,51 @@ export const Index: Record<string, any> = {
       subcategory: "",
       chunks: [],
     },
+    multiselect: {
+      name: "multiselect",
+      description: "",
+      type: "registry:ui",
+      registryDependencies: ["command"],
+      files: [
+        {
+          path: "registry/ui/multiselect.tsx",
+          type: "registry:ui",
+          target: "",
+        },
+        {
+          path: "registry/ui/multiselect.tsx",
+          type: "registry:ui",
+          target: "",
+        },
+      ],
+      component: React.lazy(() => import("@/registry/ui/multiselect")),
+      source: "",
+      category: "",
+      subcategory: "",
+      chunks: [],
+    },
+    "multiselect-form": {
+      name: "multiselect-form",
+      description: "",
+      type: "registry:ui",
+      registryDependencies: ["command", "button", "form", "sonner"],
+      files: [
+        {
+          path: "registry/ui/multiselect-form.tsx",
+          type: "registry:ui",
+          target: "",
+        },
+        {
+          path: "registry/ui/multiselect.tsx",
+          type: "registry:ui",
+          target: "",
+        },
+      ],
+      component: React.lazy(() => import("@/registry/ui/multiselect-form")),
+      source: "",
+      category: "",
+      subcategory: "",
+      chunks: [],
+    },
   },
 };

@@ -123,16 +123,7 @@ export default function TagInputForm() {
         role="region"
         aria-live="polite"
       >
-        Built with{" "}
-        <a
-          className="underline hover:text-foreground"
-          href="https://ui.shadcn.com"
-          target="_blank"
-          rel="noreferrer noopener nofollow"
-        >
-          shadcn/ui
-        </a>{" "}
-        (because even *I* can't be bothered to write everything from scratch)
+        (*I* can't be bothered to write everything from scratch)
       </p>
     </div>
   );
