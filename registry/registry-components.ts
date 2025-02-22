@@ -25,4 +25,10 @@ export const components: Registry = [
     registryDependencies: ["input", "button", "form", "sonner", "badge"],
     files: ["ui/tag-input-form.tsx"],
   },
+  {
+    name: "multiselect-form",
+    type: "registry:ui",
+    registryDependencies: ["command", "button", "form", "sonner"],
+    files: ["ui/multiselect-form.tsx", "ui/multiselect.tsx"],
+  },
 ];
