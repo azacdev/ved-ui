@@ -3,6 +3,7 @@
 import * as z from "zod";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm } from "react-hook-form";
+import { toast } from "sonner";
 
 import { Button } from "@/components/ui/button";
 import {
@@ -16,43 +17,43 @@ import MultipleSelector, { type Option } from "@/registry/ui/multiselect";
 
 const characters: Option[] = [
   {
-    value: "rick",
-    label: "Rick Sanchez",
+    value: "szechuan-sauce",
+    label: "Szechuan Sauce",
   },
   {
-    value: "morty",
-    label: "Morty Smith",
+    value: "portal-gun",
+    label: "Portal Gun",
   },
   {
-    value: "summer",
-    label: "Summer Smith",
+    value: "plumbus",
+    label: "Plumbus",
   },
   {
-    value: "beth",
-    label: "Beth Smith",
+    value: "meeseeks-box",
+    label: "Meeseeks Box",
   },
   {
-    value: "jerry",
-    label: "Jerry Smith (Disabled)",
-    disable: true,
+    value: "microverse-battery",
+    label: "Microverse Battery (kinda unstable)",
   },
   {
-    value: "mr-poopybutthole",
-    label: "Mr. Poopybutthole",
+    value: "butter-robot",
+    label: "Butter Robot (What is my purpose?)",
   },
   {
-    value: "pickle-rick",
-    label: "Pickle Rick",
+    value: "fleeb-juice",
+    label: "Fleeb Juice",
   },
   {
-    value: "birdperson",
-    label: "Birdperson",
+    value: "gromflomite-disguise",
+    label: "Gromflomite Disguise",
   },
 ];
 
 const FormSchema = z.object({
-  frameworks: z.array(z.string()).min(1, {
-    message: "Please select at least one character from the multiverse!",
+  items: z.array(z.string()).min(1, {
+    message:
+      "Gotta pick at least one, Morty! You can't just have *nothing* from the multiverse!",
   }),
 });
 
@@ -62,12 +63,13 @@ export default function MultiSelectForm() {
   const form = useForm<FormValues>({
     resolver: zodResolver(FormSchema),
     defaultValues: {
-      frameworks: [],
+      items: [],
     },
   });
 
   function onSubmit(data: FormValues) {
-    console.log("Selected characters:", data);
+    console.log("Selected items:", data);
+    toast.success("Alright, Morty! We got the stuff! Now let's get schwifty!");
   }
 
   return (
@@ -75,7 +77,7 @@ export default function MultiSelectForm() {
       <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6">
         <FormField
           control={form.control}
-          name="frameworks"
+          name="items"
           render={({ field }) => (
             <FormItem className="w-[400px]">
               <FormControl>
@@ -84,15 +86,16 @@ export default function MultiSelectForm() {
                     field.value.includes(character.value)
                   )}
                   options={characters}
-                  placeholder="Select Rick and Morty characters"
+                  placeholder="Select items from Rick's garage"
                   commandProps={{
-                    label: "Select characters",
+                    label: "Select items",
                   }}
                   hideClearAllButton
                   hidePlaceholderWhenSelected
                   emptyIndicator={
                     <p className="text-center text-sm">
-                      Wubba Lubba Dub Dub! No results found!
+                      No items found, Morty! Are you sure you're in the right
+                      dimension?
                     </p>
                   }
                   onChange={(options) => {
@@ -104,7 +107,23 @@ export default function MultiSelectForm() {
             </FormItem>
           )}
         />
-        <Button type="submit">Submit</Button>
+        <Button type="submit">Get Schwifty!</Button>
+
+        <p
+          className="text-muted-foreground mt-2 text-xs"
+          role="region"
+          aria-live="polite"
+        >
+          Built with{" "}
+          <a
+            className="hover:text-foreground underline"
+            href="https://originui.com/select"
+            target="_blank"
+            rel="noopener nofollow"
+          >
+            origin/ui
+          </a>
+        </p>
       </form>
     </Form>
   );
