@@ -31,4 +31,17 @@ export const components: Registry = [
     registryDependencies: ["command", "button", "form", "sonner"],
     files: ["ui/multiselect-form.tsx", "ui/multiselect.tsx"],
   },
+  {
+    name: "phone-input-form",
+    type: "registry:ui",
+    dependencies: ["react-phone-number-input"],
+    registryDependencies: ["button", "form", "sonner"],
+    files: ["ui/phone-input-form.tsx"],
+  },
+  {
+    name: "dual-range-slider-form",
+    type: "registry:ui",
+    registryDependencies: ["slider", "button", "form", "sonner"],
+    files: ["ui/dual-range-slider-form.tsx"],
+  },
 ];
