@@ -79,7 +79,7 @@ export default function MultiSelectForm() {
           control={form.control}
           name="items"
           render={({ field }) => (
-            <FormItem className="w-[400px]">
+            <FormItem className="w-full md:w-[400px]">
               <FormControl>
                 <MultipleSelector
                   value={characters.filter((character) =>
