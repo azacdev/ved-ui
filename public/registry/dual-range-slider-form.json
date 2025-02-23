@@ -1,0 +1,18 @@
+{
+  "name": "dual-range-slider-form",
+  "type": "registry:ui",
+  "registryDependencies": [
+    "slider",
+    "button",
+    "form",
+    "sonner"
+  ],
+  "files": [
+    {
+      "type": "registry:ui",
+      "content": "\"use client\";\n\nimport * as z from \"zod\";\nimport { useState } from \"react\";\nimport { useForm } from \"react-hook-form\";\nimport { zodResolver } from \"@hookform/resolvers/zod\";\n\nimport { toast } from \"sonner\";\nimport { Button } from \"@/components/ui/button\";\nimport { Slider } from \"@/components/ui/slider\";\nimport {\n  Form,\n  FormControl,\n  FormDescription,\n  FormField,\n  FormItem,\n  FormLabel,\n  FormMessage,\n} from \"@/components/ui/form\";\n\nconst formSchema = z.object({\n  range: z\n    .array(z.number())\n    .length(2, \"Two numbers, Morty! Not one, not three. Two!\")\n    .refine((value) => value[0] < value[1], {\n      message:\n        \"The first one's gotta be smaller, Morty. Basic stuff! Are you even trying?\",\n    })\n    .refine((value) => value[0] >= 0 && value[1] <= 100, {\n      message:\n        \"Between 0 and 100, Morty! We're not calibrating a portal gun here!\",\n    }),\n});\n\ntype FormValues = z.infer<typeof formSchema>;\n\nexport default function DualRangeSliderForm() {\n  const [sliderValue, setSliderValue] = useState([25, 75]);\n\n  const form = useForm<FormValues>({\n    resolver: zodResolver(formSchema),\n    defaultValues: {\n      range: sliderValue,\n    },\n  });\n\n  async function onSubmit(data: FormValues) {\n    toast.success(\"Range submitted! Good job, Morty... for once.\", {\n      description: `Selected range: ${data.range[0]} - ${data.range[1]}. Now, let's go get some Szechuan sauce!`,\n    });\n  }\n\n  const handleSliderChange = (value: number[]) => {\n    setSliderValue(value);\n    form.setValue(\"range\", value, {\n      shouldValidate: true,\n    });\n  };\n\n  return (\n    <Form {...form}>\n      <form\n        onSubmit={form.handleSubmit(onSubmit)}\n        className=\"w-full max-w-sm space-y-6\"\n      >\n        <FormField\n          control={form.control}\n          name=\"range\"\n          render={() => (\n            <FormItem>\n              <div className=\"flex items-center justify-between gap-2\">\n                <FormLabel className=\"leading-6\">\n                  Dimensional Range Thingy\n                </FormLabel>\n                <output className=\"text-sm font-medium tabular-nums\">\n                  {sliderValue[0]} - {sliderValue[1]}\n                </output>\n              </div>\n              <FormControl>\n                <Slider\n                  value={sliderValue}\n                  onValueChange={handleSliderChange}\n                  min={0}\n                  max={100}\n                  step={1}\n                  className=\"py-4\"\n                />\n              </FormControl>\n              <FormDescription>\n                Pick a range, Morty. It's not rocket science... unless we're\n                doing rocket science later.\n              </FormDescription>\n              <FormMessage />\n            </FormItem>\n          )}\n        />\n        <Button\n          type=\"submit\"\n          className=\"w-full\"\n          disabled={form.formState.isSubmitting}\n        >\n          {form.formState.isSubmitting\n            ? \"Submitting... (Hold on to your butts!)\"\n            : \"Submit the Range, Morty!\"}\n        </Button>\n      </form>\n    </Form>\n  );\n}\n",
+      "path": "ui/dual-range-slider-form.tsx",
+      "target": "components/ui/dual-range-slider-form.tsx"
+    }
+  ]
+}

@@ -123,5 +123,44 @@ export const Index: Record<string, any> = {
       subcategory: "",
       chunks: [],
     },
+    "phone-input-form": {
+      name: "input-form",
+      description: "",
+      type: "registry:ui",
+      dependencies: ["react-phone-number-input"],
+      registryDependencies: ["button", "form", "sonner"],
+      files: [
+        {
+          path: "registry/ui/phone-input-form.tsx",
+          type: "registry:ui",
+          target: "",
+        },
+      ],
+      component: React.lazy(() => import("@/registry/ui/phone-input-form")),
+      source: "",
+      category: "",
+      subcategory: "",
+      chunks: [],
+    },
+    "dual-range-slider-form": {
+      name: "dual-range-slider-form",
+      description: "",
+      type: "registry:ui",
+      registryDependencies: ["button", "form", "sonner", "slider"],
+      files: [
+        {
+          path: "registry/ui/dual-range-slider-form.tsx",
+          type: "registry:ui",
+          target: "",
+        },
+      ],
+      component: React.lazy(
+        () => import("@/registry/ui/dual-range-slider-form")
+      ),
+      source: "",
+      category: "",
+      subcategory: "",
+      chunks: [],
+    },
   },
 };
