@@ -118,6 +118,21 @@ export default function DateExpressionInputForm() {
 
   return (
     <div className="relative w-full space-y-2 md:w-[400px]">
+      <p
+        className="text-muted-foreground mt-2 text-xs"
+        role="region"
+        aria-live="polite"
+      >
+        Built with{" "}
+        <a
+          className="hover:text-foreground underline"
+          href="https://yeezy-dates.vercel.app/"
+          target="_blank"
+          rel="noopener nofollow"
+        >
+          yeezy-dates
+        </a>
+      </p>
       <Form {...form}>
         <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-2">
           <FormField
@@ -199,22 +214,6 @@ export default function DateExpressionInputForm() {
           </div>
         </div>
       )}
-
-      <p
-        className="text-muted-foreground mt-2 text-xs"
-        role="region"
-        aria-live="polite"
-      >
-        Built with{" "}
-        <a
-          className="hover:text-foreground underline"
-          href="https://yeezy-dates.vercel.app/"
-          target="_blank"
-          rel="noopener nofollow"
-        >
-          yeezy-dates
-        </a>
-      </p>
     </div>
   );
 }
