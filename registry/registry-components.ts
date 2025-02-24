@@ -44,4 +44,11 @@ export const components: Registry = [
     registryDependencies: ["slider", "button", "form", "sonner"],
     files: ["ui/dual-range-slider-form.tsx"],
   },
+  {
+    name: "date-expression-input-form",
+    type: "registry:ui",
+    dependencies: ["yeezy-dates"],
+    registryDependencies: ["input", "button", "form", "sonner"],
+    files: ["ui/date-expression-input-form.tsx"],
+  },
 ];
