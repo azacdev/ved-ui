@@ -199,6 +199,22 @@ export default function DateExpressionInputForm() {
           </div>
         </div>
       )}
+
+      <p
+        className="text-muted-foreground mt-2 text-xs"
+        role="region"
+        aria-live="polite"
+      >
+        Built with{" "}
+        <a
+          className="hover:text-foreground underline"
+          href="https://yeezy-dates.vercel.app/"
+          target="_blank"
+          rel="noopener nofollow"
+        >
+          yeezy-dates
+        </a>
+      </p>
     </div>
   );
 }
