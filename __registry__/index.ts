@@ -162,5 +162,26 @@ export const Index: Record<string, any> = {
       subcategory: "",
       chunks: [],
     },
+    "date-expression-input-form": {
+      name: "date-expression-input-form",
+      description: "",
+      type: "registry:ui",
+      dependencies: ["yeezy-dates"],
+      registryDependencies: ["input", "button", "form", "sonner"],
+      files: [
+        {
+          path: "registry/ui/date-expression-input-form.tsx",
+          type: "registry:ui",
+          target: "",
+        },
+      ],
+      component: React.lazy(
+        () => import("@/registry/ui/date-expression-input-form")
+      ),
+      source: "",
+      category: "",
+      subcategory: "",
+      chunks: [],
+    },
   },
 };
