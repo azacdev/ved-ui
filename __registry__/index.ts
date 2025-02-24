@@ -166,6 +166,7 @@ export const Index: Record<string, any> = {
       name: "date-expression-input-form",
       description: "",
       type: "registry:ui",
+      dependencies: ["yeezy-dates"],
       registryDependencies: ["input", "button", "form", "sonner"],
       files: [
         {
