@@ -14,10 +14,10 @@ export const components: Registry = [
     files: ["ui/select-form.tsx"],
   },
   {
-    name: "calendar-form",
+    name: "date-picker-form",
     type: "registry:ui",
-    registryDependencies: ["calendar", "button", "form", "sonner"],
-    files: ["ui/calendar-form.tsx"],
+    registryDependencies: ["calendar", "button", "form", "sonner", "popover"],
+    files: ["ui/date-picker-form.tsx"],
   },
   {
     name: "tag-input-form",
@@ -50,5 +50,11 @@ export const components: Registry = [
     dependencies: ["yeezy-dates"],
     registryDependencies: ["input", "button", "form", "sonner"],
     files: ["ui/date-expression-input-form.tsx"],
+  },
+  {
+    name: "date-range-picker-form",
+    type: "registry:ui",
+    registryDependencies: ["calendar", "button", "form", "sonner", "popover"],
+    files: ["ui/date-range-picker-form.tsx"],
   },
 ];

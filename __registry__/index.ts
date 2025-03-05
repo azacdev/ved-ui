@@ -41,19 +41,19 @@ export const Index: Record<string, any> = {
       subcategory: "",
       chunks: [],
     },
-    "calendar-form": {
-      name: "calendar-form",
+    "date-picker-form": {
+      name: "date-picker-form",
       description: "",
       type: "registry:ui",
-      registryDependencies: ["calendar", "button", "form", "sonner"],
+      registryDependencies: ["calendar", "button", "form", "sonner", "popover"],
       files: [
         {
-          path: "registry/ui/calendar-form.tsx",
+          path: "registry/ui/date-picker-form.tsx",
           type: "registry:ui",
           target: "",
         },
       ],
-      component: React.lazy(() => import("@/registry/ui/calendar-form")),
+      component: React.lazy(() => import("@/registry/ui/date-picker-form")),
       source: "",
       category: "",
       subcategory: "",
@@ -177,6 +177,26 @@ export const Index: Record<string, any> = {
       ],
       component: React.lazy(
         () => import("@/registry/ui/date-expression-input-form")
+      ),
+      source: "",
+      category: "",
+      subcategory: "",
+      chunks: [],
+    },
+    "date-range-picker-form": {
+      name: "date-range-picker-form",
+      description: "",
+      type: "registry:ui",
+      registryDependencies: ["calendar", "button", "form", "sonner", "popover"],
+      files: [
+        {
+          path: "registry/ui/date-range-picker-form.tsx",
+          type: "registry:ui",
+          target: "",
+        },
+      ],
+      component: React.lazy(
+        () => import("@/registry/ui/date-range-picker-form")
       ),
       source: "",
       category: "",

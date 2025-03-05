@@ -1,13 +1,13 @@
 "use client";
 
-import { zodResolver } from "@hookform/resolvers/zod";
-import { format } from "date-fns";
-import { CalendarIcon } from "lucide-react";
-import { useForm } from "react-hook-form";
 import { z } from "zod";
+import { format } from "date-fns";
+import { useForm } from "react-hook-form";
+import { CalendarIcon } from "lucide-react";
+import { zodResolver } from "@hookform/resolvers/zod";
 
-import { cn } from "@/lib/utils";
 import { toast } from "sonner";
+import { cn } from "@/lib/utils";
 import { Button } from "@/components/ui/button";
 import { Calendar } from "@/components/ui/calendar";
 import {
@@ -31,7 +31,7 @@ const FormSchema = z.object({
   }),
 });
 
-export default function CalendarForm() {
+export default function DatePickerForm() {
   const form = useForm<z.infer<typeof FormSchema>>({
     resolver: zodResolver(FormSchema),
   });
@@ -40,6 +40,7 @@ export default function CalendarForm() {
     toast.success(
       "Wubba Lubba Dub-Dub! Date submitted! Now, where's my Szechuan sauce?"
     );
+    form.reset();
   }
 
   return (
